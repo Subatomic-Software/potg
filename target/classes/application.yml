@@ -1,0 +1,26 @@
+server.port: 8081
+server.ssl.key-store: keystore.jks
+server.ssl.key-store-password: password
+server.ssl.keyStoreType: JKS
+server.ssl.keyAlias: selfsigned
+
+
+blizzard:
+  client:
+    clientId: n3y27fuebpcfc7zd8qfp6pxj3u8x5smn
+    clientSecret: q9jSprCnsCXuQ9CJz7nCQXkNCPGufB56
+    accessTokenUri: https://us.battle.net/oauth/token
+    userAuthorizationUri: https://us.battle.net/oauth/authorize
+    authenticationScheme: query
+    clientAuthenticationScheme: form
+  resource:
+    userInfoUri: https://us.api.battle.net/account/user
+
+logging:
+  level:
+    org.springframework.security: DEBUG
+
+spring:
+  resources:
+    chain:
+      enabled: true
