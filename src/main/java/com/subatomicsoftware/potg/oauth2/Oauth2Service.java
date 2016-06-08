@@ -25,16 +25,12 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.apache.catalina.Context;
-import org.apache.tomcat.util.descriptor.web.SecurityCollection;
-import org.apache.tomcat.util.descriptor.web.SecurityConstraint;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.security.oauth2.resource.ResourceServerProperties;
 import org.springframework.boot.autoconfigure.security.oauth2.resource.UserInfoTokenServices;
 import org.springframework.boot.context.embedded.FilterRegistrationBean;
-import org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainerFactory;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.core.annotation.Order;

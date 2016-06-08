@@ -1,13 +1,11 @@
 server.port: 8081
-server.ssl.key-store: keystore.jks
-server.ssl.key-store-password: password
-server.ssl.keyStoreType: JKS
-server.ssl.keyAlias: selfsigned
+#server.ssl.key-store: keystore.jks
+#server.ssl.key-store-password: password
+#server.ssl.keyStoreType: JKS
+#server.ssl.keyAlias: selfsigned
 
 blizzard:
   client:
-    useCurrentUri: false
-    preEstablishedRedirectUri: https://us.playofthegame.com
     clientId: n3y27fuebpcfc7zd8qfp6pxj3u8x5smn
     clientSecret: q9jSprCnsCXuQ9CJz7nCQXkNCPGufB56
     accessTokenUri: https://us.battle.net/oauth/token
