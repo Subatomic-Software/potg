@@ -58,7 +58,6 @@ import org.springframework.web.filter.CompositeFilter;
 import org.springframework.web.filter.OncePerRequestFilter;
 import org.springframework.web.util.WebUtils;
 
-@SpringBootApplication
 @RestController
 @EnableOAuth2Client
 @EnableAuthorizationServer
@@ -88,10 +87,6 @@ public class Oauth2Service extends WebSecurityConfigurerAdapter {
 			.and().addFilterAfter(csrfHeaderFilter(), CsrfFilter.class)
 			.addFilterBefore(ssoFilter(), BasicAuthenticationFilter.class);
 		// @formatter:on
-	}
-
-	public static void main(String[] args) {
-        SpringApplication.run(Oauth2Service.class, args);
 	}
 
 	@Bean
