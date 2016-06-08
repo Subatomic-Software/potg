@@ -1,0 +1,169 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body ng-app="app" ng-controller="home as home">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="main.js"></script>
+
+    <div class="header" ng-include="'navbar.html'"></div>
+
+    <div class="container">
+        <form name="guide-form">
+            <input type="hidden" ng-bind="home.id" name="user-id" />
+            <input type="hidden" value="" name="guide-id" />
+
+            <fieldset class="form-group">
+                <label for="title">Title:</label>
+                <input type="text" class="form-control" name="title" id="title" placeholder="Enter Title" />
+            </fieldset>
+
+            <fieldset class="form-group">
+                <label for="guide-type">Guide Type:</label>
+                <select class="form-control" id="guide-type" name="guide-type">
+                    <option>Hero</option>
+                </select>
+            </fieldset>
+
+            <fieldset class="form-group">
+                <label for="hero-select">Select Hero</label>
+                <select class="form-control" id="hero-select" name="hero-select">
+                    <option>Genji</option>
+                    <option>McCree</option>
+                    <option>Pharah</option>
+                    <option>Reaper</option>
+                    <option>Soldier: 76</option>
+                    <option>Tracer</option>
+                    <option>Bastion</option>
+                    <option>Hanzo</option>
+                    <option>Junkrat</option>
+                    <option>Mei</option>
+                    <option>Torbjörn</option>
+                    <option>Widowmaker</option>
+                    <option>D.Va</option>
+                    <option>Reinhardt</option>
+                    <option>Roadhog</option>
+                    <option>Winston</option>
+                    <option>Zarya</option>
+                    <option>Lúcio</option>
+                    <option>Mercy</option>
+                    <option>Symmetra</option>
+                    <option>Zenyatta</option>
+                </select>
+            </fieldset>
+
+            <fieldset>
+                <label for="intro">Introduction</label>
+                <textarea class="form-control" id="intro" name="intro" rows="5"></textarea>
+            </fieldset>
+
+            <fieldset>
+                <label>Ability 1</label>
+                <textarea class="form-control" rows="5"></textarea>
+            </fieldset>
+
+            <fieldset>
+                <label>Ability 2</label>
+                <textarea class="form-control" rows="5"></textarea>
+            </fieldset>
+
+            <fieldset>
+                <label>Ult</label>
+                <textarea class="form-control" rows="5"></textarea>
+            </fieldset>
+
+            <fieldset>
+                <label for="counters">Counters</label>
+                <select multiple class="form-control" id="counters" name="counters">
+                    <option>Genji</option>
+                    <option>McCree</option>
+                    <option>Pharah</option>
+                    <option>Reaper</option>
+                    <option>Soldier: 76</option>
+                    <option>Tracer</option>
+                    <option>Bastion</option>
+                    <option>Hanzo</option>
+                    <option>Junkrat</option>
+                    <option>Mei</option>
+                    <option>Torbjörn</option>
+                    <option>Widowmaker</option>
+                    <option>D.Va</option>
+                    <option>Reinhardt</option>
+                    <option>Roadhog</option>
+                    <option>Winston</option>
+                    <option>Zarya</option>
+                    <option>Lúcio</option>
+                    <option>Mercy</option>
+                    <option>Symmetra</option>
+                    <option>Zenyatta</option>
+                </select>
+            </fieldset>
+
+            <fieldset>
+                <label for="compliments">Compliments</label>
+                <select multiple class="form-control" id="compliments" name="compliments">
+                    <option>Genji</option>
+                    <option>McCree</option>
+                    <option>Pharah</option>
+                    <option>Reaper</option>
+                    <option>Soldier: 76</option>
+                    <option>Tracer</option>
+                    <option>Bastion</option>
+                    <option>Hanzo</option>
+                    <option>Junkrat</option>
+                    <option>Mei</option>
+                    <option>Torbjörn</option>
+                    <option>Widowmaker</option>
+                    <option>D.Va</option>
+                    <option>Reinhardt</option>
+                    <option>Roadhog</option>
+                    <option>Winston</option>
+                    <option>Zarya</option>
+                    <option>Lúcio</option>
+                    <option>Mercy</option>
+                    <option>Symmetra</option>
+                    <option>Zenyatta</option>
+                </select>
+            </fieldset>
+
+
+            <fieldset>
+                <label for="map-type">Map Type</label>
+                <select multiple class="form-control" id="map-type" name="map-type">
+                    <option>Control</option>
+                    <option>Capture</option>
+                    <option>Payload</option>
+                </select>
+            </fieldset>
+
+            <fieldset>
+                <label for="maps">Maps</label>
+                <select multiple class="form-control" id="maps" name="maps">
+                    <option>Hanamura</option>
+                    <option>...</option>
+                    <option>....</option>
+                </select>
+            </fieldset>
+
+            <fieldset>
+                <label for="main-text">Main</label>
+                <textarea class="form-control" id="main-text" name="main-text" rows="5"></textarea>
+            </fieldset>
+
+            <fieldset>
+                <label for="conclusion">Main</label>
+                <textarea class="form-control" id="conclusion" name="conclusion" rows="5"></textarea>
+            </fieldset>
+
+        </form>
+    </div>
+
+
+</body>
+</html>

@@ -21,7 +21,7 @@ angular
 						        self.authenticated = false;
 						    });
 						    self.logout = function () {
-						        $http.post('logout', {}).success(function () {
+						        $http.post('/logout', {}).success(function () {
 						            self.authenticated = false;
 						            $location.path("/");
 						        }).error(function (data) {
