@@ -11,7 +11,7 @@ package com.subatomicsoftware.potg.restservices.heroes.controller;
  */
 @RestController
 @RequestMapping("/heroes")
-public class HeroEndPoints {
+public class HeroController {
 
     @RequestMapping(method= RequestMethod.GET,path = "/{hero_id}")
     public @ResponseBody Hero getHero() {

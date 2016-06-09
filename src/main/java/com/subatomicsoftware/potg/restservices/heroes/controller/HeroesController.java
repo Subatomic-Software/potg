@@ -17,7 +17,7 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/heroes")
-public class HeroesEndPoints {
+public class HeroesController {
 
 
 

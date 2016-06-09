@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.subatomicsoftware.potg.oauth2;
+package com.subatomicsoftware.potg.configuration.oauth2;
 
 import java.io.IOException;
 import java.util.*;
@@ -26,13 +26,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.security.oauth2.resource.ResourceServerProperties;
 import org.springframework.boot.autoconfigure.security.oauth2.resource.UserInfoTokenServices;
 import org.springframework.boot.context.embedded.FilterRegistrationBean;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.core.annotation.Order;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
@@ -40,39 +38,24 @@ import org.springframework.security.oauth2.client.OAuth2ClientContext;
 import org.springframework.security.oauth2.client.OAuth2RestTemplate;
 import org.springframework.security.oauth2.client.filter.OAuth2ClientAuthenticationProcessingFilter;
 import org.springframework.security.oauth2.client.filter.OAuth2ClientContextFilter;
-import org.springframework.security.oauth2.client.resource.OAuth2ProtectedResourceDetails;
-import org.springframework.security.oauth2.client.token.grant.code.AuthorizationCodeResourceDetails;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableAuthorizationServer;
-import org.springframework.security.oauth2.config.annotation.web.configuration.EnableOAuth2Client;
-import org.springframework.security.oauth2.provider.OAuth2Authentication;
 import org.springframework.security.web.authentication.LoginUrlAuthenticationEntryPoint;
 import org.springframework.security.web.authentication.www.BasicAuthenticationFilter;
 import org.springframework.security.web.csrf.CsrfFilter;
 import org.springframework.security.web.csrf.CsrfToken;
 import org.springframework.security.web.csrf.CsrfTokenRepository;
 import org.springframework.security.web.csrf.HttpSessionCsrfTokenRepository;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.filter.CompositeFilter;
 import org.springframework.web.filter.OncePerRequestFilter;
 import org.springframework.web.util.WebUtils;
 
-@RestController
-@EnableOAuth2Client
 @EnableAuthorizationServer
 @Order(6)
-public class Oauth2Service extends WebSecurityConfigurerAdapter {
+@Configuration
+public class OAuth2Configuration extends WebSecurityConfigurerAdapter {
 
 	@Autowired
 	OAuth2ClientContext oauth2ClientContext;
-
-	@RequestMapping({ "/user", "/me" })
-	@ResponseBody
-	public Map user(OAuth2Authentication auth) {
-		HashMap details = (LinkedHashMap) auth.getUserAuthentication().getDetails();
-		return details;
-	}
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
@@ -154,17 +137,4 @@ public class Oauth2Service extends WebSecurityConfigurerAdapter {
 		return repository;
 	}
 
-}
-
-class ClientResources {
-	private OAuth2ProtectedResourceDetails client = new AuthorizationCodeResourceDetails();
-	private ResourceServerProperties resource = new ResourceServerProperties();
-
-	public OAuth2ProtectedResourceDetails getClient() {
-		return client;
-	}
-
-	public ResourceServerProperties getResource() {
-		return resource;
-	}
 }
