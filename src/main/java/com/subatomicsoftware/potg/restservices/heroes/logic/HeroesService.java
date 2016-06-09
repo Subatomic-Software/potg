@@ -18,18 +18,21 @@ public class HeroesService {
     @Autowired
     private HeroRepository repository;
 
-    public void saveHero(){
-        Hero hero1 = new Hero();
-        hero1.setHeroName("Slots");
-        hero1.setHeroImg("abc");
-        hero1.setHeroRame("mid or feed");
-        HeroAbility ab1=  new HeroAbility();
-        ab1.setAbilityName("asd");
-        ab1.setAbilityText("qq");
-        ab1.setAbilityImg("eee");
-        List<HeroAbility> l1 = new ArrayList<>();
-        l1.add(ab1);
-        hero1.setAbilities(l1);
+    public void saveHero(Hero hero1){
         repository.save(hero1);
+    }
+
+    public Hero getHeroByName(String heroName){
+        Hero hero = repository.findByHeroName(heroName);
+        return hero;
+    }
+
+    public Hero getHeroById(String id){
+        Hero hero = repository.findOne(id);
+        return hero;
+    }
+
+    public List<Hero> getAllHeroes(){
+        return repository.findAll();
     }
 }

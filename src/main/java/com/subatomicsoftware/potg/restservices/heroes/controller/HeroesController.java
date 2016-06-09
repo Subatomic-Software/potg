@@ -3,10 +3,7 @@ package com.subatomicsoftware.potg.restservices.heroes.controller;
 import com.subatomicsoftware.potg.restservices.heroes.logic.HeroesService;
 import com.subatomicsoftware.potg.restservices.heroes.model.Hero;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,29 +16,23 @@ import java.util.List;
 public class HeroesController {
 
     @Autowired
-    HeroesService bl;
+    HeroesService heroesService;
 
     @RequestMapping(method= RequestMethod.GET)
-    public @ResponseBody List<Hero> getHeroes() {
-
-        bl.saveHero();
-
-        List<Hero> heroes =  new ArrayList<>();
-        Hero hero1 = new Hero();
-        hero1.setHeroName("Slots");
-        Hero hero2 = new Hero();
-        hero2.setHeroName("Daman");
-        heroes.add(hero1);
-        heroes.add(hero2);
+    public @ResponseBody List<Hero> getHeroes(@RequestParam(value = "heroName",required = false) String heroName) {
+        List<Hero> heroes = new ArrayList<>();
+        if(heroName==null) {
+            return heroesService.getAllHeroes();
+        }else if(heroName!= null){
+            heroes.add(heroesService.getHeroByName(heroName));
+        }
         return heroes;
-
     }
 
     @RequestMapping(method= RequestMethod.POST)
-    public void createHero() {
+    public void createHero(@RequestBody Hero hero) {
         HeroesService bl =new HeroesService();
-        bl.saveHero();
-      //todo create heroes and assign and if//
+        heroesService.saveHero(hero);
     }
 
     @RequestMapping(method= RequestMethod.DELETE)
