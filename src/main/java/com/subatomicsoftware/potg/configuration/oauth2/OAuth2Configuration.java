@@ -59,15 +59,15 @@ public class OAuth2Configuration extends WebSecurityConfigurerAdapter {
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		// @formatter:off	
+		// @formatter:off
 		http.antMatcher("/**")
 			.authorizeRequests()
 				.antMatchers("/", "/login/blizzard", "/webjars/**", "/**").permitAll()
 				.anyRequest().authenticated()
 			.and().exceptionHandling().authenticationEntryPoint(new LoginUrlAuthenticationEntryPoint("/"))
 			.and().logout().logoutSuccessUrl("/").permitAll()
-			.and().csrf().csrfTokenRepository(csrfTokenRepository())
-			.and().addFilterAfter(csrfHeaderFilter(), CsrfFilter.class)
+			.and().csrf().disable()//csrfTokenRepository(csrfTokenRepository())
+			//.and().addFilterAfter(csrfHeaderFilter(), CsrfFilter.class)
 			.addFilterBefore(ssoFilter(), BasicAuthenticationFilter.class);
 		// @formatter:on
 	}
