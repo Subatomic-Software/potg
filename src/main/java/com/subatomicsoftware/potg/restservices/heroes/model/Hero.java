@@ -11,6 +11,7 @@ public class Hero {
     @Id
     private String id;
     private String heroImg;
+    private String heroThumbImg;
     private String heroRole;
     private String heroName;
     private List<HeroAbility> abilities;
@@ -31,11 +32,12 @@ public class Hero {
     public void setHeroName(String heroName) {
         this.heroName = heroName;
     }
-    public String getHeroRame() {
+
+    public String getHeroRole() {
         return heroRole;
     }
 
-    public void setHeroRame(String heroRole) {
+    public void setHeroRole(String heroRole) {
         this.heroRole = heroRole;
     }
 
@@ -58,7 +60,15 @@ public class Hero {
     @Override
     public String toString() {
         return String.format(
-                "Hero[id=%s, heroName='%s', heroImg='%s', heroRole='%s', abilities='%s']",
-                id, heroName, heroImg,heroRole,abilities);
+                "Hero[id=%s, heroName='%s', heroImg='%s', heroThumbImg='%s', heroRole='%s', abilities='%s']",
+                id, heroName, heroImg, heroThumbImg, heroRole, abilities);
+    }
+
+    public String getHeroThumbImg() {
+        return heroThumbImg;
+    }
+
+    public void setHeroThumbImg(String heroThumbImg) {
+        this.heroThumbImg = heroThumbImg;
     }
 }

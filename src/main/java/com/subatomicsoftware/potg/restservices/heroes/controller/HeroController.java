@@ -17,7 +17,7 @@ public class HeroController {
     HeroesService heroesService;
 
     @RequestMapping(method=RequestMethod.GET,
-            produces= MediaType.APPLICATION_JSON_VALUE)
+            produces=MediaType.APPLICATION_JSON_VALUE)
     public @ResponseBody Hero getHero(@PathVariable("id") String heroId) {
         if(heroId!=null) {
             return heroesService.getHeroById(heroId);
@@ -25,9 +25,16 @@ public class HeroController {
         return null;
     }
 
-    @RequestMapping(method= RequestMethod.PUT,path = "/{hero_id}")
-    public @ResponseBody void setHero() {
+    @RequestMapping(method= RequestMethod.PUT)
+    public @ResponseBody Hero setHero(@PathVariable("id") String heroId) {
 
+
+        return null;
+    }
+
+    @RequestMapping(method= RequestMethod.DELETE)
+    public @ResponseBody void deleteHero(@PathVariable("id") String heroId) {
+        heroesService.deleteHero(heroId);
     }
 
 }
