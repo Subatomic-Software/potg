@@ -1,4 +1,4 @@
-package com.subatomicsoftware.potg.restservices.heroes.model;
+package com.subatomicsoftware.potg.services.rest.heroes.model;
 
 /**
  * Created by seezoo on 6/6/2016.

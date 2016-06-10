@@ -1,13 +1,12 @@
-package com.subatomicsoftware.potg.restservices.heroes.logic;
+package com.subatomicsoftware.potg.services.rest.heroes.logic;
 
-import com.subatomicsoftware.potg.restservices.heroes.dao.HeroRepository;
-import com.subatomicsoftware.potg.restservices.heroes.model.Hero;
-import com.subatomicsoftware.potg.restservices.heroes.model.HeroAbility;
+import com.subatomicsoftware.potg.services.rest.heroes.dao.HeroRepository;
+import com.subatomicsoftware.potg.services.rest.heroes.model.Hero;
+import com.subatomicsoftware.potg.services.rest.heroes.model.HeroAbility;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 /**
@@ -17,7 +16,7 @@ import java.util.List;
 public class HeroesService {
 
     @Autowired
-    private HeroRepository repository;
+    private HeroRepository heroRepository;
 
     public Hero generateTestHero(){
         Hero hero = new Hero();
@@ -33,37 +32,37 @@ public class HeroesService {
         l1.add(ab1);
         hero.setAbilities(l1);
 
-        return repository.save(hero);
+        return heroRepository.save(hero);
     }
 
     public Hero saveHero(Hero hero){
-        return repository.save(hero);
+        return heroRepository.save(hero);
     }
 
     public Hero getHeroByName(String heroName){
-        Hero hero = repository.findByHeroName(heroName);
+        Hero hero = heroRepository.findByHeroName(heroName);
         return hero;
     }
 
     public Hero getHeroById(String id){
-        Hero hero = repository.findOne(id);
+        Hero hero = heroRepository.findOne(id);
         return hero;
     }
 
     public List<Hero> getAllHeroes(){
-        return repository.findAll();
+        return heroRepository.findAll();
     }
 
     public void deleteAllHeros(){
-        repository.deleteAll();
+        heroRepository.deleteAll();
     }
 
     public void deleteHero(String id){
-        repository.delete(id);
+        heroRepository.delete(id);
     }
 
     public List<Hero> getHeroByRole(String heroRole) {
-        return repository.findByHeroRole(heroRole);
+        return heroRepository.findByHeroRole(heroRole);
     }
 
 }

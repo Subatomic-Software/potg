@@ -1,7 +1,7 @@
-package com.subatomicsoftware.potg.restservices.heroes.dao;
+package com.subatomicsoftware.potg.services.rest.heroes.dao;
 import java.util.List;
 
-import com.subatomicsoftware.potg.restservices.heroes.model.Hero;
+import com.subatomicsoftware.potg.services.rest.heroes.model.Hero;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 public interface HeroRepository extends MongoRepository<Hero, String> {

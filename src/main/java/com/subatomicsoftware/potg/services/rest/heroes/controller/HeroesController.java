@@ -1,7 +1,7 @@
-package com.subatomicsoftware.potg.restservices.heroes.controller;
+package com.subatomicsoftware.potg.services.rest.heroes.controller;
 
-import com.subatomicsoftware.potg.restservices.heroes.logic.HeroesService;
-import com.subatomicsoftware.potg.restservices.heroes.model.Hero;
+import com.subatomicsoftware.potg.services.rest.heroes.logic.HeroesService;
+import com.subatomicsoftware.potg.services.rest.heroes.model.Hero;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
