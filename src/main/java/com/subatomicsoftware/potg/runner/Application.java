@@ -2,6 +2,7 @@ package com.subatomicsoftware.potg.runner;
 
 import com.subatomicsoftware.potg.services.rest.heroes.dao.HeroRepository;
 import com.subatomicsoftware.potg.services.rest.maps.dao.MapsRepository;
+import com.subatomicsoftware.potg.services.rest.users.dao.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -20,6 +21,9 @@ public class Application {
 
     @Autowired
     MapsRepository mapsRepository;
+
+    @Autowired
+    UserRepository userRepository;
 
     public static void main(String[] args) {
           SpringApplication.run(Application.class, args);

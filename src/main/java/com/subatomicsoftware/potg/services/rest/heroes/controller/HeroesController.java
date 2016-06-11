@@ -37,7 +37,7 @@ public class HeroesController {
         return heroesService.saveHero(hero);
     }
 
-    @RequestMapping(path="/init",method= RequestMethod.POST)
+    @RequestMapping(path="/test",method= RequestMethod.GET)
     public @ResponseBody Hero createTestHero() {
         return heroesService.generateTestHero();
     }
@@ -45,5 +45,16 @@ public class HeroesController {
     @RequestMapping(method= RequestMethod.DELETE)
     public void deleteHeroes() {
         heroesService.deleteAllHeros();
+    }
+
+    @RequestMapping(path="/{id}", method= RequestMethod.DELETE)
+    public void deleteHero(@PathVariable("id") String heroId) {
+        heroesService.deleteHero(heroId);
+    }
+
+    @RequestMapping(path = "/{id}",method= RequestMethod.PUT)
+    public @ResponseBody Hero setHero(@PathVariable("id") String heroId) {
+        //todo
+        return null;
     }
 }

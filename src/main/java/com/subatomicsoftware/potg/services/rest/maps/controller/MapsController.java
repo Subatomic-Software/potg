@@ -33,4 +33,14 @@ public class MapsController {
         return maps;
     }
 
+    @RequestMapping(method= RequestMethod.POST)
+    public @ResponseBody OwMap createMap(@RequestBody OwMap owMap){
+        return mapsService.addMap(owMap);
+    }
+
+    @RequestMapping(path = "/test", method= RequestMethod.GET)
+    public @ResponseBody OwMap createTestMap(){
+        return mapsService.generateTestMap();
+    }
+
 }

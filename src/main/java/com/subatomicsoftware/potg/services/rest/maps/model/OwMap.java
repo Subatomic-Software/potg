@@ -1,5 +1,6 @@
 package com.subatomicsoftware.potg.services.rest.maps.model;
 
+import org.springframework.beans.factory.annotation.Required;
 import org.springframework.data.annotation.Id;
 
 import java.util.List;
@@ -14,6 +15,7 @@ public class OwMap {
     private String mapName;
     private String mapType;
     private List<String> mapRoles;
+    private String mapThumb;
 
     public String getId() {
         return id;
@@ -27,6 +29,7 @@ public class OwMap {
         return mapName;
     }
 
+    @Required
     public void setMapName(String mapName) {
         this.mapName = mapName;
     }
@@ -35,6 +38,7 @@ public class OwMap {
         return mapType;
     }
 
+    @Required
     public void setMapType(String mapType) {
         this.mapType = mapType;
     }
@@ -43,6 +47,7 @@ public class OwMap {
         return mapRoles;
     }
 
+    @Required
     public void setMapRoles(List<String> mapRoles) {
         this.mapRoles = mapRoles;
     }
@@ -55,5 +60,14 @@ public class OwMap {
                 ", mapType='" + mapType + '\'' +
                 ", mapRoles=" + mapRoles +
                 '}';
+    }
+
+    public String getMapThumb() {
+        return mapThumb;
+    }
+
+    @Required
+    public void setMapThumb(String mapThumb) {
+        this.mapThumb = mapThumb;
     }
 }

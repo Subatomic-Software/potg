@@ -15,6 +15,19 @@ blizzard:
   resource:
     userInfoUri: https://us.api.battle.net/account/user
 
+twitch:
+  client:
+    scope: channel_read
+    clientId: oyn7j2cj8tzq5vimj4ttpsrkeyvy74i
+    clientSecret: 10yg93q7zisygvwq98idf8vkj2gg3ld
+    accessTokenUri: https://api.twitch.tv/kraken/oauth2/token
+    userAuthorizationUri: https://api.twitch.tv/kraken/oauth2/authorize
+    authenticationScheme: query
+    clientAuthenticationScheme: form
+    tokenName: oauth_token
+  resource:
+    userInfoUri: https://api.twitch.tv/kraken/channel
+
 logging:
   level:
     org.springframework.security: DEBUG

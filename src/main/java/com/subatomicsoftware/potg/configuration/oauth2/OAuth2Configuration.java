@@ -62,7 +62,7 @@ public class OAuth2Configuration extends WebSecurityConfigurerAdapter {
 		// @formatter:off
 		http.antMatcher("/**")
 			.authorizeRequests()
-				.antMatchers("/", "/login/blizzard", "/webjars/**", "/**").permitAll()
+				.antMatchers("/", "/login/blizzard", "/login/twitch", "/webjars/**", "/**").permitAll()
 				.anyRequest().authenticated()
 			.and().exceptionHandling().authenticationEntryPoint(new LoginUrlAuthenticationEntryPoint("/"))
 			.and().logout().logoutSuccessUrl("/").permitAll()
@@ -87,10 +87,15 @@ public class OAuth2Configuration extends WebSecurityConfigurerAdapter {
 		return new ClientResources();
 	}
 
+	@Bean
+	@ConfigurationProperties("twitch")
+	ClientResources twitch() { return new ClientResources(); }
+
 	private Filter ssoFilter() {
 		CompositeFilter filter = new CompositeFilter();
 		List<Filter> filters = new ArrayList<>();
 		filters.add(ssoFilter(blizzard(), "/login/blizzard/"));
+		filters.add(ssoFilter(twitch(), "/login/twitch/"));
 		filter.setFilters(filters);
 		return filter;
 	}
