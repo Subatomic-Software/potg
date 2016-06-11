@@ -20,6 +20,15 @@ public class OAuth2Controller {
     public Map user(OAuth2Authentication auth) {
         HashMap details = (LinkedHashMap) auth.getUserAuthentication().getDetails();
         return details;
+
+
+        //IF BNET:
+        //todo call getUser, if exists, return User
+        //todo call getUser, if not, POST User, return User
+
+        //IF TWITCH:
+        //todo call updateUser, add twitch, return User
+
     }
 
 }

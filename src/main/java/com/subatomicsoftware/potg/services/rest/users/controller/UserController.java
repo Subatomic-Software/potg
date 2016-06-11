@@ -43,4 +43,6 @@ public class UserController {
 
     }
 
+    //todo write POST user
+    //todo write twitch swap PUT, returns User
 }

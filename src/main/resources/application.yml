@@ -1,8 +1,8 @@
 server.port: 8081
-#server.ssl.key-store: keystore.jks
-#server.ssl.key-store-password: password
-#server.ssl.keyStoreType: JKS
-#server.ssl.keyAlias: selfsigned
+server.ssl.key-store: keystore.jks
+server.ssl.key-store-password: password
+server.ssl.keyStoreType: JKS
+server.ssl.keyAlias: selfsigned
 
 blizzard:
   client:
