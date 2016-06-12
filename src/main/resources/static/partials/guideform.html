@@ -1,0 +1,67 @@
+﻿
+    <div>
+        <div ng-controller="guideform">
+
+            <div class="form-group">
+                <label>Title:</label>
+                <input ng-model="guide.title_input" class="form-control" required />
+            </div>
+
+            <div class="form-group">
+                <label>Hero:</label>
+                <select ng-model="guide.heroName" class="form-control" ng-change="updateAbilities()" id="heroSelect" required>
+                    <option ng-repeat="hero in heroList track by $index">{{hero.heroName}}</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Introduction:</label>
+                <textarea rows="3" ng-model="guide.intro_input" class="form-control"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>{{guide.abilities[0].abilityName}}</label>
+                <textarea ng-model="guide.abilities[0].ability_input" class="form-control"></textarea>
+                <label>{{guide.abilities[1].abilityName}}</label>
+                <textarea ng-model="guide.abilities[1].ability_input" class=" form-control"></textarea>
+                <label >{{guide.abilities[2].abilityName}}</label>
+                <textarea ng-model="guide.abilities[2].ability_input" class="form-control"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>Counters:</label>
+                <select ng-model="counterSelection" class="form-control">
+                    <option ng-repeat="hero in heroList track by $index">{{hero.heroName}}</option>
+                </select>
+                <button ng-click="addCounter()">Add</button>
+                <button ng-click="removeCounter()">Remove</button>
+                <textarea ng-model="guide.counters.counters_input" class="form-control"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>Compliments:</label>
+                <select ng-model="complimentSelection" class="form-control">
+                    <option ng-repeat="hero in heroList track by $index">{{hero.heroName}}</option>
+                </select>
+                <button ng-click="addCompliment()">Add</button>
+                <button ng-click="removeCompliment()">Remove</button>
+                <textarea ng-model="guide.compliments.compliment_input" class="form-control"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>Main Input:</label>
+                <textarea rows="3" ng-model="guide.main_input" class="form-control"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>Conclusion:</label>
+                <textarea rows="3" ng-model="guide.conclusion" class="form-control"></textarea>
+            </div>
+
+            <input type="submit" ng-click="save()" value="Save" />
+
+            <h3>JSON test</h3>
+            <p>{{guide | json}}</p>
+        </div>
+    </div>
+

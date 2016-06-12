@@ -58,7 +58,7 @@ h3{
     padding: 0px;
 }
 
-#history:after{
+#history::after{
     content:url("resources/nav/historyBtn.png");
 }
 
@@ -103,7 +103,7 @@ h3{
 }
 
 #login:hover:after{
-    content:url("resources/nav/loginBtnHover.png");
+    content:url("resources/nav/LoginBtnHover.png");
 }
 
 #placeholder:after{

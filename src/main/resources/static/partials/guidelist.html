@@ -1,0 +1,12 @@
+﻿
+
+<div>
+    <a href="/createguide">Create Guide</a>
+
+    <div ng-controller="test">
+        
+        <ul>
+            <li ng-repeat="guide in guideList track by $index"><a href="/guide/{{guide.id}}">{{guide.guideName}}</a></li>
+        </ul>
+    </div>
+</div>

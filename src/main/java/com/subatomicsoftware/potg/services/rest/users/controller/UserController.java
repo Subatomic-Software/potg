@@ -5,6 +5,8 @@ import com.subatomicsoftware.potg.services.rest.users.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
+
 /**
  * Created by slotterdesktop on 6/11/2016.
  */
@@ -37,12 +39,14 @@ public class UserController {
     }
 
     @RequestMapping(method= RequestMethod.PUT)
-    public @ResponseBody void updateUser(@RequestBody User user){
+    public @ResponseBody User updateUser(@RequestBody User user){
 
-        userService.updateUserById(user);
+        return userService.updateUser(user);
 
     }
 
     //todo write POST user
+    //@RequestMapping(method= RequestMethod.POST)
+    //public @ResponseBody
     //todo write twitch swap PUT, returns User
 }

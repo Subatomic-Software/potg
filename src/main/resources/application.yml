@@ -4,6 +4,8 @@ server.ssl.key-store-password: password
 server.ssl.keyStoreType: JKS
 server.ssl.keyAlias: selfsigned
 
+spring.data.mongodb.uri: mongodb://127.0.0.1:27017/potg
+
 blizzard:
   client:
     clientId: n3y27fuebpcfc7zd8qfp6pxj3u8x5smn

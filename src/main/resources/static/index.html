@@ -5,20 +5,22 @@
 
 <head>
     <meta charset="utf-8" />
-    <title></title>
+    <title>Play of the Game</title>
+    <base href="/" />
 </head>
-<body ng-app="app" ng-controller="home as home">
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+<body ng-app="potg" ng-controller="home as home">
+
+
+    <link rel="stylesheet" type="text/css" href="header.css">
+
+    <div class="header" ng-include="'header.html'"></div>
+
+    <div ng-view></div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular-route.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="main.js"></script>
-
-    <div class="header" ng-include="'navbar.html'"></div>
-
-    <div class="container">
-        <h3>Under Construction!</h3>
-        <p>Future home of play of the game. Leaderboards, guides, match history and more!</p>
-    </div>
-
 
 </body>
 </html>

@@ -10,6 +10,10 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableOAuth2Client;
 
+import javax.net.ssl.HostnameVerifier;
+import javax.net.ssl.HttpsURLConnection;
+import javax.net.ssl.SSLSession;
+
 @SpringBootApplication
 @ComponentScan("com.subatomicsoftware.potg")
 @EnableOAuth2Client
@@ -26,7 +30,7 @@ public class Application {
     UserRepository userRepository;
 
     public static void main(String[] args) {
-          SpringApplication.run(Application.class, args);
+        SpringApplication.run(Application.class, args);
      }
 
 }
