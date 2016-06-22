@@ -1,0 +1,5 @@
+<ul class="nav navbar-nav navbar-right dropdown" >
+    <li class="bnetID" ng-show="home.authenticated"><a href="" ng-bind="home.user.battletag"></a></li>
+    <li class="log"><a href="/login/twitch/">Link Twitch</a></li>
+    <li class="log" ng-show="home.authenticated"><a href="" ng-click="home.logout()">Logout</a></li>
+</ul>

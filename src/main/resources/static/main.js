@@ -5,28 +5,34 @@ var main = angular.module('potg', ['ngRoute']);
 						    $httpProvider.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 						}).controller("home", function ($http, $location) {
 						    var self = this;
-						    $http.get("/user/").success(function (data) {
-						        if (data.id) {
-						            console.log("data:" + data);
-						            self.id = data.id;
-						            self.battletag = data.battletag;
-						            self.authenticated = true;
-						        } else {
-						            self.id = "N/A";
-						            self.authenticated = false;
-						        }
+						    $http.get("/user/").success(function(data){
+
+                                self.user = data;
+
+                                if(self.user.url){
+
+                                }
+                                else{
+                                            if (self.user.id) {
+                                                console.log("data:" + data);
+                                                self.user.authenticated = true;
+                                            } else {
+                                                self.user.id = "N/A";
+                                                self.user.authenticated = false;
+                                            }
+                                }
 						        console.log("data:" + data);
 						    }).error(function () {
-						        self.id = "N/A";
-						        self.authenticated = false;
+						        self.user.id = "N/A";
+						        self.user.authenticated = false;
 						    });
 						    self.logout = function () {
 						        $http.post('/logout/', {}).success(function () {
-						            self.authenticated = false;
+						            self.user.authenticated = false;
 						            $location.path("/");
 						        }).error(function (data) {
 						            console.log("Logout failed");
-						            self.authenticated = false;
+						            self.user.authenticated = false;
 						        });
 						    };
 						});
@@ -63,7 +69,7 @@ main.controller('viewguide', function ($scope, $http, $routeParams) {
 //Controller for guide creation form
 main.controller('guideform', function ($scope, $http) {
     $scope.guide = {};
-    $scope.guide.userID = $scope.home.battletag;
+    $scope.guide.userID = $scope.home.user.id;
     $scope.heroList = [];
 
     /*$scope.heroList = [
@@ -134,4 +140,33 @@ main.controller('guidelist', function ($scope, $http) {
     }).success(function (result) {
         $scope.guideList = result;
     });
+});
+
+main.controller('loginController', function ($scope){
+
+    if($scope.home.user.twitchUrl){
+        $scope.headerHtml = "partials/twitchLoggedIn.html";
+
+    }
+    else{
+        if($scope.home.user.authenticated){
+            $scope.headerHtml = "partials/bnetLoggedIn.html";
+
+        }
+        else{
+            $scope.headerHtml = "partials/defaultLogin.html";
+        }
+    }
+
+    $scope.changeTwitchPublic = function(){
+        home.user.twitchDisplay = document.getElementById("twitchCheckbox").value;
+
+        $http({
+            method: 'PUT',
+            url: '/user/',
+            data: home.user
+        })
+    }
+
+
 });

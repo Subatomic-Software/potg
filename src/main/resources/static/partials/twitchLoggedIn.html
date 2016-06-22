@@ -1,0 +1,6 @@
+<ul class="nav navbar-nav navbar-right dropdown" >
+    <li class="bnetID" ng-show="home.user.authenticated"><a href="" ng-bind="home.user.battletag"></a></li>
+    <li class="log"><a href="{{home.user.twitchUrl}}"></a>Twitch</li>
+    <li class="log"><label><input type="checkbox" id="twitchCheckbox" value="" ng-change="changeTwitchPublic()">Make Twitch Public?</label></li>
+    <li class="log" ng-show="home.user.authenticated"><a href="" ng-click="home.logout()">Logout</a></li>
+</ul>

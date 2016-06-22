@@ -24,12 +24,8 @@
     <div class="header-center"></div>
 
     <nav class="navbar navbar-default header-bottom">
-        <div class="container">
-            <ul class="nav navbar-nav navbar-right">
-                <li class="bnetID" ng-show="home.authenticated"><a href="" ng-bind="home.battletag"></a></li>
-                <li class="log" ng-show="!home.authenticated"><a href="/login/blizzard/" target="_self">Login</a></li>
-                <li class="log" ng-show="home.authenticated"><a href="" ng-click="home.logout()">Logout</a></li>
-            </ul>
+        <div class="container" ng-controller="loginController">
+            <div ng-include='{{headerHtml}}'></div>
         </div>
     </nav>
 </div>
