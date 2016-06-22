@@ -58,7 +58,7 @@ main.controller('viewguide', function ($scope, $http, $routeParams) {
 
     $http({
         method: 'GET',
-        url: '/guides/',
+        url: '/api/guides/',
         params:{id:$routeParams.id}
     }).success(function (result) {
         $scope.guide = result;
@@ -79,7 +79,7 @@ main.controller('guideform', function ($scope, $http) {
 
     $http({
         method: 'GET',
-        url: '/heroes/',
+        url: '/api/heroes/',
     }).success(function (result) {
         $scope.heroList = result;
     });
@@ -120,7 +120,7 @@ main.controller('guideform', function ($scope, $http) {
     $scope.save = function () {
         $http({
             method: 'POST',
-            url: '/guides/',
+            url: '/api/guides/',
             data: $scope.guide
         }).success(function (result) {
             window.location.href = "/guides/";
@@ -136,7 +136,7 @@ main.controller('guidelist', function ($scope, $http) {
 
     $http({
         method: 'GET',
-        url: '/guides/'
+        url: '/api/guides/'
     }).success(function (result) {
         $scope.guideList = result;
     });

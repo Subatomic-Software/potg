@@ -12,7 +12,7 @@ import java.util.List;
  * Created by seezoo on 6/6/2016.
  */
 @RestController
-@RequestMapping("/heroes")
+@RequestMapping("/api/heroes")
 public class HeroesController {
 
     @Autowired

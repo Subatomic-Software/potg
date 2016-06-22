@@ -11,7 +11,7 @@ import java.util.HashMap;
  * Created by slotterdesktop on 6/11/2016.
  */
 @RestController
-@RequestMapping("/users")
+@RequestMapping("/api/users")
 public class UserController {
 
     @Autowired
