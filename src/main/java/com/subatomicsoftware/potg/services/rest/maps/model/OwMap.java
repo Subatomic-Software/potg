@@ -11,18 +11,18 @@ import java.util.List;
 public class OwMap {
 
     @Id
-    private String id;
+    private String mapId;
     private String mapName;
     private String mapType;
     private List<String> mapRoles;
     private String mapThumb;
 
-    public String getId() {
-        return id;
+    public String getMapId() {
+        return mapId;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setMapId(String mapId) {
+        this.mapId = mapId;
     }
 
     public String getMapName() {
@@ -55,7 +55,7 @@ public class OwMap {
     @Override
     public String toString() {
         return "OwMap{" +
-                "id='" + id + '\'' +
+                "mapId='" + mapId + '\'' +
                 ", mapName='" + mapName + '\'' +
                 ", mapType='" + mapType + '\'' +
                 ", mapRoles=" + mapRoles +

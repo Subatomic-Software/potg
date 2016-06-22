@@ -7,6 +7,7 @@ public class HeroAbility {
     private String abilityName;
     private String abilityImg;
     private String abilityText;
+    private String abilityUserText;
 
     public String getAbilityName() {
         return abilityName;
@@ -29,5 +30,13 @@ public class HeroAbility {
 
     public void setAbilityText(String abilityText) {
         this.abilityText = abilityText;
+    }
+
+    public String getAbilityUserText() {
+        return abilityUserText;
+    }
+
+    public void setAbilityUserText(String abilityUserText) {
+        this.abilityUserText = abilityUserText;
     }
 }

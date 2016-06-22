@@ -9,20 +9,22 @@ import java.util.List;
 public class Hero {
 
     @Id
-    private String id;
+    private String heroId;
     private String heroImg;
     private String heroThumbImg;
     private String heroRole;
     private String heroName;
     private List<HeroAbility> abilities;
+    private String counterText;
+    private String complimentText;
 
     public Hero() {}
-    public String getId() {
-        return id;
+    public String getHeroId() {
+        return heroId;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setHeroId(String heroId) {
+        this.heroId = heroId;
     }
 
     public String getHeroName() {
@@ -60,8 +62,8 @@ public class Hero {
     @Override
     public String toString() {
         return String.format(
-                "Hero[id=%s, heroName='%s', heroImg='%s', heroThumbImg='%s', heroRole='%s', abilities='%s']",
-                id, heroName, heroImg, heroThumbImg, heroRole, abilities);
+                "Hero[heroId=%s, heroName='%s', heroImg='%s', heroThumbImg='%s', heroRole='%s', abilities='%s']",
+                heroId, heroName, heroImg, heroThumbImg, heroRole, abilities);
     }
 
     public String getHeroThumbImg() {
@@ -71,4 +73,22 @@ public class Hero {
     public void setHeroThumbImg(String heroThumbImg) {
         this.heroThumbImg = heroThumbImg;
     }
+
+
+    public String getComplimentText() {
+        return complimentText;
+    }
+
+    public void setComplimentText(String complimentText) {
+        this.complimentText = complimentText;
+    }
+
+    public String getCounterText() {
+        return counterText;
+    }
+
+    public void setCounterText(String counterText) {
+        this.counterText = counterText;
+    }
+
 }

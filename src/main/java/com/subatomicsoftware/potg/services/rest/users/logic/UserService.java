@@ -29,7 +29,7 @@ public class UserService {
         if(tmp == null){
             return userRepository.save(user);
         }
-        user.setId(tmp.getId());
+        user.setUserId(tmp.getUserId());
         return userRepository.save(user);
     }
 

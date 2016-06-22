@@ -1,5 +1,6 @@
 package com.subatomicsoftware.potg.runner;
 
+import com.subatomicsoftware.potg.services.rest.guides.dao.GuidesRepository;
 import com.subatomicsoftware.potg.services.rest.heroes.dao.HeroRepository;
 import com.subatomicsoftware.potg.services.rest.maps.dao.MapsRepository;
 import com.subatomicsoftware.potg.services.rest.users.dao.UserRepository;
@@ -28,6 +29,9 @@ public class Application {
 
     @Autowired
     UserRepository userRepository;
+
+    @Autowired
+    GuidesRepository guidesRepository;
 
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
